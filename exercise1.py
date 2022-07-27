@@ -1,4 +1,4 @@
-# Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
+# Второе дз
 
 def InputValues (text: str):
     check = False
@@ -10,21 +10,9 @@ def InputValues (text: str):
             number = int(input(f'{text}'))
     return number
 
-# def MultiOfNumbers(num: int):
-#     multi = 1
-#     listOfMulti = []
-#     for i in range(num):
-#         multi = multi*(i + 1)
-#         listOfMulti.append(multi)
-#     defString = f'A set of multi of numbers from 1 to {num} is {listOfMulti}'
-#     return defString
+## Напишите программу, которая принимает на вход число N и выдает набор произведений чисел от 1 до N.
 
-# numberN = InputValues('Enter number N: ')
-# print(MultiOfNumbers(numberN))
-
-# ------------------------------------------------------------------------------
-
-def f(num: int):
+def f1(num: int):
     multi = 1
     while num>0:
         multi = num * multi
@@ -34,5 +22,18 @@ def f(num: int):
 numberN = InputValues('Enter number N: ')
 listOfNumbers = [i+1 for i  in range(numberN)]
 print(listOfNumbers)
-listOfMulti = list(map(f, listOfNumbers))
+listOfMulti = list(map(f1, listOfNumbers))
 print(listOfMulti)
+
+# Задайте список из n чисел последовательности (1 + 1/n)^n. и выведите на экран их сумму.
+
+numberN = InputValues('Enter number N: ')
+listOfNumbers = [(1 + 1/i)**i for i in range(1,numberN + 1)] 
+print(listOfNumbers)
+print(sum(listOfNumbers))
+
+# Задайте список из N элементов, заполненных числами из промежутка [-N, N]. Найдите произведение элементов на указанных позициях. Позиции хранятся в файле file.txt в одной строке одно число.
+
+numberN = InputValues('Enter number N: ')
+listOfNumbers = [i for i in range(-numberN,numberN+1)]    #Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+print(listOfNumbers)
